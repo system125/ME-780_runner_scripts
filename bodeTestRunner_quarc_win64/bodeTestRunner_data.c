@@ -7,9 +7,9 @@
  *
  * Code generation for model "bodeTestRunner".
  *
- * Model version              : 1.42
+ * Model version              : 1.46
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 04:06:05 2023
+ * C source code generated on : Sun Dec 10 17:24:57 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -23,20 +23,17 @@
 
 /* Block parameters (default storage) */
 P_bodeTestRunner_T bodeTestRunner_P = {
-  /* Variable: Kd
-   * Referenced by: '<Root>/Gain2'
+  /* Variable: pd_param
+   * Referenced by:
+   *   '<Root>/Gain2'
+   *   '<Root>/Gain3'
    */
-  0.04611,
-
-  /* Variable: Ki
-   * Referenced by: '<Root>/Gain1'
-   */
-  124.3945,
-
-  /* Variable: Kp
-   * Referenced by: '<Root>/Gain'
-   */
-  2.1998,
+  {
+    1.186190567380528,
+    0.019409245541053173,
+    0.0,
+    74.47499176432936
+  },
 
   /* Mask Parameter: DiscreteDerivative_ICPrevScaled
    * Referenced by: '<S1>/UD'
@@ -153,16 +150,6 @@ P_bodeTestRunner_T bodeTestRunner_P = {
    */
   65536.0,
 
-  /* Computed Parameter: DiscreteTimeIntegrator_gainval
-   * Referenced by: '<Root>/Discrete-Time Integrator'
-   */
-  0.001,
-
-  /* Expression: 0
-   * Referenced by: '<Root>/Discrete-Time Integrator'
-   */
-  0.0,
-
   /* Computed Parameter: TSamp_WtEt
    * Referenced by: '<S1>/TSamp'
    */
@@ -171,12 +158,12 @@ P_bodeTestRunner_T bodeTestRunner_P = {
   /* Expression: [(1-ad) 0]
    * Referenced by: '<Root>/Discrete Transfer Fcn'
    */
-  { 0.0985660378096771, 0.0 },
+  { 0.071769312819495723, 0.0 },
 
   /* Expression: [1 -ad]
    * Referenced by: '<Root>/Discrete Transfer Fcn'
    */
-  { 1.0, -0.9014339621903229 },
+  { 1.0, -0.92823068718050428 },
 
   /* Expression: 0
    * Referenced by: '<Root>/Discrete Transfer Fcn'

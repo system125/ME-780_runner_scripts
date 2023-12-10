@@ -7,9 +7,9 @@
  *
  * Code generation for model "run_q4_feedforward".
  *
- * Model version              : 1.45
+ * Model version              : 1.46
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 06:13:49 2023
+ * C source code generated on : Sun Dec 10 17:57:25 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

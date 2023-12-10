@@ -7,9 +7,9 @@
  *
  * Code generation for model "bodeTestRunner".
  *
- * Model version              : 1.42
+ * Model version              : 1.46
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 04:06:05 2023
+ * C source code generated on : Sun Dec 10 17:24:57 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -37,6 +37,7 @@ static uint_T rtDataTypeSizes[] = {
   sizeof(action_T),
   2*sizeof(uint32_T),
   sizeof(int32_T),
+  sizeof(struct_69xIBEWZoPNsgydcxPhrJC),
   sizeof(t_card),
   sizeof(char_T),
   sizeof(uchar_T),
@@ -60,6 +61,7 @@ static const char_T * rtDataTypeNames[] = {
   "action_T",
   "timer_uint32_pair_T",
   "physical_connection",
+  "struct_69xIBEWZoPNsgydcxPhrJC",
   "t_card",
   "char_T",
   "uchar_T",
@@ -68,14 +70,14 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&bodeTestRunner_B.mmcn), 0, 0, 11 }
+  { (char_T *)(&bodeTestRunner_B.mmcn), 0, 0, 10 }
   ,
 
-  { (char_T *)(&bodeTestRunner_DW.DiscreteTimeIntegrator_DSTATE), 0, 0, 20 },
+  { (char_T *)(&bodeTestRunner_DW.UD_DSTATE), 0, 0, 23 },
 
-  { (char_T *)(&bodeTestRunner_DW.HILInitialize_Card), 15, 0, 1 },
+  { (char_T *)(&bodeTestRunner_DW.HILInitialize_Card), 16, 0, 1 },
 
-  { (char_T *)(&bodeTestRunner_DW.HILReadEncoder1_PWORK), 11, 0, 10 },
+  { (char_T *)(&bodeTestRunner_DW.HILReadEncoder1_PWORK), 11, 0, 7 },
 
   { (char_T *)(&bodeTestRunner_DW.HILInitialize_ClockModes), 6, 0, 7 },
 
@@ -92,11 +94,13 @@ static DataTypeTransitionTable rtBTransTable = {
 
 /* data type transitions for Parameters structure */
 static DataTypeTransition rtPTransitions[] = {
-  { (char_T *)(&bodeTestRunner_P.Kd), 0, 0, 4 },
+  { (char_T *)(&bodeTestRunner_P.pd_param), 15, 0, 1 },
+
+  { (char_T *)(&bodeTestRunner_P.DiscreteDerivative_ICPrevScaled), 0, 0, 1 },
 
   { (char_T *)(&bodeTestRunner_P.HILReadEncoder1_channels), 7, 0, 3 },
 
-  { (char_T *)(&bodeTestRunner_P.HILInitialize_OOTerminate), 0, 0, 30 },
+  { (char_T *)(&bodeTestRunner_P.HILInitialize_OOTerminate), 0, 0, 28 },
 
   { (char_T *)(&bodeTestRunner_P.HILInitialize_CKChannels), 6, 0, 4 },
 
@@ -107,7 +111,7 @@ static DataTypeTransition rtPTransitions[] = {
 
 /* data type transition table for Parameters structure */
 static DataTypeTransitionTable rtPTransTable = {
-  6U,
+  7U,
   rtPTransitions
 };
 

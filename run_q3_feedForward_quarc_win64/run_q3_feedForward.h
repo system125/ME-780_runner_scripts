@@ -9,7 +9,7 @@
  *
  * Model version              : 1.43
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 05:30:27 2023
+ * C source code generated on : Sun Dec 10 17:52:30 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -946,15 +946,12 @@ typedef struct {
 
 /* Parameters (default storage) */
 struct P_run_q3_feedForward_T_ {
-  real_T Kd;                           /* Variable: Kd
-                                        * Referenced by: '<Root>/Gain2'
-                                        */
-  real_T Ki;                           /* Variable: Ki
-                                        * Referenced by: '<Root>/Gain1'
-                                        */
-  real_T Kp;                           /* Variable: Kp
-                                        * Referenced by: '<Root>/Gain'
-                                        */
+  struct_wMsc3CgFqIXYmuQYnOzvCC pid_param;/* Variable: pid_param
+                                           * Referenced by:
+                                           *   '<Root>/Gain'
+                                           *   '<Root>/Gain1'
+                                           *   '<Root>/Gain2'
+                                           */
   real_T k_acc;                        /* Variable: k_acc
                                         * Referenced by: '<Root>/Gain3'
                                         */

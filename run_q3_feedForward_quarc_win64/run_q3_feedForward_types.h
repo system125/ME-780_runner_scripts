@@ -9,7 +9,7 @@
  *
  * Model version              : 1.43
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 05:30:27 2023
+ * C source code generated on : Sun Dec 10 17:52:30 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -25,6 +25,21 @@
 #include "zero_crossing_types.h"
 
 /* Model Code Variants */
+#ifndef DEFINED_TYPEDEF_FOR_struct_wMsc3CgFqIXYmuQYnOzvCC_
+#define DEFINED_TYPEDEF_FOR_struct_wMsc3CgFqIXYmuQYnOzvCC_
+
+typedef struct {
+  real_T Kp;
+  real_T Ki;
+  real_T Kd;
+  real_T a;
+  real_T Ti;
+  real_T K;
+  real_T Ta;
+  real_T Td;
+} struct_wMsc3CgFqIXYmuQYnOzvCC;
+
+#endif
 
 /* Parameters (default storage) */
 typedef struct P_run_q3_feedForward_T_ P_run_q3_feedForward_T;

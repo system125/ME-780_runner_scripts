@@ -9,7 +9,7 @@
  *
  * Model version              : 1.43
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 05:30:27 2023
+ * C source code generated on : Sun Dec 10 17:52:30 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -239,7 +239,7 @@ void run_q3_feedForward_output(void)
     run_q3_feedForward_DW.DiscreteTimeIntegrator_DSTATE;
 
   /* Gain: '<Root>/Gain2' */
-  run_q3_feedForward_B.Gain2 = run_q3_feedForward_P.Kd * rtb_Sum;
+  run_q3_feedForward_B.Gain2 = run_q3_feedForward_P.pid_param.Kd * rtb_Sum;
 
   /* SampleTimeMath: '<S1>/TSamp'
    *
@@ -270,7 +270,7 @@ void run_q3_feedForward_output(void)
    *  Gain: '<Root>/Gain'
    *  Sum: '<Root>/Sum1'
    */
-  run_q3_feedForward_B.Sum3 = ((run_q3_feedForward_P.Kp * rtb_Sum +
+  run_q3_feedForward_B.Sum3 = ((run_q3_feedForward_P.pid_param.Kp * rtb_Sum +
     run_q3_feedForward_B.DiscreteTimeIntegrator) +
     run_q3_feedForward_B.DiscreteTransferFcn) + run_q3_feedForward_B.Sum2;
 
@@ -312,7 +312,7 @@ void run_q3_feedForward_output(void)
   }
 
   /* Gain: '<Root>/Gain1' */
-  run_q3_feedForward_B.Gain1 = run_q3_feedForward_P.Ki * rtb_Sum;
+  run_q3_feedForward_B.Gain1 = run_q3_feedForward_P.pid_param.Ki * rtb_Sum;
 }
 
 /* Model update function */
@@ -1838,10 +1838,10 @@ RT_MODEL_run_q3_feedForward_T *run_q3_feedForward(void)
   run_q3_feedForward_M->Timing.stepSize1 = 0.001;
 
   /* External mode info */
-  run_q3_feedForward_M->Sizes.checksums[0] = (3783752551U);
-  run_q3_feedForward_M->Sizes.checksums[1] = (1071097282U);
-  run_q3_feedForward_M->Sizes.checksums[2] = (1738773245U);
-  run_q3_feedForward_M->Sizes.checksums[3] = (1104643990U);
+  run_q3_feedForward_M->Sizes.checksums[0] = (3823190493U);
+  run_q3_feedForward_M->Sizes.checksums[1] = (690490253U);
+  run_q3_feedForward_M->Sizes.checksums[2] = (987447157U);
+  run_q3_feedForward_M->Sizes.checksums[3] = (1240437093U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
@@ -1882,7 +1882,7 @@ RT_MODEL_run_q3_feedForward_T *run_q3_feedForward(void)
     (void) memset((char_T *) &dtInfo, 0,
                   sizeof(dtInfo));
     run_q3_feedForward_M->SpecialInfo.mappingInfo = (&dtInfo);
-    dtInfo.numDataTypes = 19;
+    dtInfo.numDataTypes = 20;
     dtInfo.dataTypeSizes = &rtDataTypeSizes[0];
     dtInfo.dataTypeNames = &rtDataTypeNames[0];
 
@@ -1901,7 +1901,7 @@ RT_MODEL_run_q3_feedForward_T *run_q3_feedForward(void)
   run_q3_feedForward_M->Sizes.numSampTimes = (2);/* Number of sample times */
   run_q3_feedForward_M->Sizes.numBlocks = (36);/* Number of blocks */
   run_q3_feedForward_M->Sizes.numBlockIO = (15);/* Number of block outputs */
-  run_q3_feedForward_M->Sizes.numBlockPrms = (92);/* Sum of parameter "widths" */
+  run_q3_feedForward_M->Sizes.numBlockPrms = (90);/* Sum of parameter "widths" */
   return run_q3_feedForward_M;
 }
 

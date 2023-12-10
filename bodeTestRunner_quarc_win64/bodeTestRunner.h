@@ -7,9 +7,9 @@
  *
  * Code generation for model "bodeTestRunner".
  *
- * Model version              : 1.42
+ * Model version              : 1.46
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 04:06:05 2023
+ * C source code generated on : Sun Dec 10 17:24:57 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -40,8 +40,9 @@
 
 /* Shared type includes */
 #include "multiword_types.h"
-#include "rt_defines.h"
+#include "rtGetInf.h"
 #include "rt_nonfinite.h"
+#include "rt_defines.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetBlockIO
@@ -867,18 +868,16 @@ typedef struct {
   real_T InverseModulus;               /* '<S2>/Inverse Modulus' */
   real_T mmcn2;                        /* '<S2>/mm//cn - 2' */
   real_T FromWorkspace2;               /* '<Root>/From Workspace2' */
-  real_T DiscreteTimeIntegrator;       /* '<Root>/Discrete-Time Integrator' */
-  real_T Gain2;                        /* '<Root>/Gain2' */
+  real_T Gain3;                        /* '<Root>/Gain3' */
   real_T TSamp;                        /* '<S1>/TSamp' */
   real_T DiscreteTransferFcn;          /* '<Root>/Discrete Transfer Fcn' */
-  real_T Sum1;                         /* '<Root>/Sum1' */
-  real_T Saturation;                   /* '<Root>/Saturation' */
-  real_T Gain1;                        /* '<Root>/Gain1' */
+  real_T disc;                         /* '<Root>/Sum1' */
+  real_T in;                           /* '<Root>/Saturation' */
+  real_T Derivative;                   /* '<Root>/Derivative' */
 } B_bodeTestRunner_T;
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  real_T DiscreteTimeIntegrator_DSTATE;/* '<Root>/Discrete-Time Integrator' */
   real_T UD_DSTATE;                    /* '<S1>/UD' */
   real_T DiscreteTransferFcn_states;   /* '<Root>/Discrete Transfer Fcn' */
   real_T HILInitialize_AIMinimums[2];  /* '<S2>/HIL Initialize' */
@@ -892,6 +891,10 @@ typedef struct {
   real_T InverseModulus1_PreviousInput;/* '<S2>/Inverse Modulus1' */
   real_T InverseModulus1_Revolutions;  /* '<S2>/Inverse Modulus1' */
   real_T DiscreteTransferFcn_tmp;      /* '<Root>/Discrete Transfer Fcn' */
+  real_T TimeStampA;                   /* '<Root>/Derivative' */
+  real_T LastUAtTimeA;                 /* '<Root>/Derivative' */
+  real_T TimeStampB;                   /* '<Root>/Derivative' */
+  real_T LastUAtTimeB;                 /* '<Root>/Derivative' */
   t_card HILInitialize_Card;           /* '<S2>/HIL Initialize' */
   void *HILReadEncoder1_PWORK;         /* '<S2>/HIL Read Encoder1' */
   void *HILReadEncoder2_PWORK;         /* '<S2>/HIL Read Encoder 2' */
@@ -902,10 +905,6 @@ typedef struct {
   } FromWorkspace2_PWORK;              /* '<Root>/From Workspace2' */
 
   void *HILWriteAnalog_PWORK;          /* '<S2>/HIL Write Analog' */
-  struct {
-    void *LoggedData[3];
-  } Scope_PWORK;                       /* '<Root>/Scope' */
-
   struct {
     void *LoggedData;
   } ToWorkspace_PWORK;                 /* '<Root>/To Workspace' */
@@ -941,15 +940,11 @@ typedef struct {
 
 /* Parameters (default storage) */
 struct P_bodeTestRunner_T_ {
-  real_T Kd;                           /* Variable: Kd
-                                        * Referenced by: '<Root>/Gain2'
-                                        */
-  real_T Ki;                           /* Variable: Ki
-                                        * Referenced by: '<Root>/Gain1'
-                                        */
-  real_T Kp;                           /* Variable: Kp
-                                        * Referenced by: '<Root>/Gain'
-                                        */
+  struct_69xIBEWZoPNsgydcxPhrJC pd_param;/* Variable: pd_param
+                                          * Referenced by:
+                                          *   '<Root>/Gain2'
+                                          *   '<Root>/Gain3'
+                                          */
   real_T DiscreteDerivative_ICPrevScaled;
                               /* Mask Parameter: DiscreteDerivative_ICPrevScaled
                                * Referenced by: '<S1>/UD'
@@ -1019,13 +1014,6 @@ struct P_bodeTestRunner_T_ {
                                         */
   real_T InverseModulus1_Modulus;      /* Expression: modulus
                                         * Referenced by: '<S2>/Inverse Modulus1'
-                                        */
-  real_T DiscreteTimeIntegrator_gainval;
-                           /* Computed Parameter: DiscreteTimeIntegrator_gainval
-                            * Referenced by: '<Root>/Discrete-Time Integrator'
-                            */
-  real_T DiscreteTimeIntegrator_IC;    /* Expression: 0
-                                        * Referenced by: '<Root>/Discrete-Time Integrator'
                                         */
   real_T TSamp_WtEt;                   /* Computed Parameter: TSamp_WtEt
                                         * Referenced by: '<S1>/TSamp'

@@ -9,7 +9,7 @@
  *
  * Model version              : 1.43
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 05:30:27 2023
+ * C source code generated on : Sun Dec 10 17:52:30 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -23,20 +23,22 @@
 
 /* Block parameters (default storage) */
 P_run_q3_feedForward_T run_q3_feedForward_P = {
-  /* Variable: Kd
-   * Referenced by: '<Root>/Gain2'
+  /* Variable: pid_param
+   * Referenced by:
+   *   '<Root>/Gain'
+   *   '<Root>/Gain1'
+   *   '<Root>/Gain2'
    */
-  0.04611,
-
-  /* Variable: Ki
-   * Referenced by: '<Root>/Gain1'
-   */
-  124.3945,
-
-  /* Variable: Kp
-   * Referenced by: '<Root>/Gain'
-   */
-  2.1998,
+  {
+    0.70590372219145414,
+    5.2214451208522679,
+    0.015653281683425585,
+    68.752171366320837,
+    0.10018928342466786,
+    5.2214451208522679,
+    0.014544995163452586,
+    0.049548882566602108
+  },
 
   /* Variable: k_acc
    * Referenced by: '<Root>/Gain3'
