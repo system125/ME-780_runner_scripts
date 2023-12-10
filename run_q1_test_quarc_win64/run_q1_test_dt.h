@@ -7,9 +7,9 @@
  *
  * Code generation for model "run_q1_test".
  *
- * Model version              : 1.40
+ * Model version              : 1.42
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sat Dec  9 02:27:26 2023
+ * C source code generated on : Sun Dec 10 06:15:56 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -79,7 +79,7 @@ static DataTypeTransition rtBTransitions[] = {
 
   { (char_T *)(&run_q1_test_DW.HILInitialize_ClockModes), 6, 0, 7 },
 
-  { (char_T *)(&run_q1_test_DW.FromWorkspace1_IWORK.PrevIndex), 10, 0, 1 },
+  { (char_T *)(&run_q1_test_DW.FromWorkspace2_IWORK.PrevIndex), 10, 0, 1 },
 
   { (char_T *)(&run_q1_test_DW.InverseModulus_FirstSample), 8, 0, 2 }
 };

@@ -450,7 +450,7 @@
                     section.data(3).logicalSrcIdx = 2;
                     section.data(3).dtTransOffset = 2;
 
-                    ;% run_q1_test_B.FromWorkspace1
+                    ;% run_q1_test_B.FromWorkspace2
                     section.data(4).logicalSrcIdx = 3;
                     section.data(4).dtTransOffset = 3;
 
@@ -612,7 +612,7 @@
                     section.data(2).logicalSrcIdx = 16;
                     section.data(2).dtTransOffset = 1;
 
-                    ;% run_q1_test_DW.FromWorkspace1_PWORK.TimePtr
+                    ;% run_q1_test_DW.FromWorkspace2_PWORK.TimePtr
                     section.data(3).logicalSrcIdx = 17;
                     section.data(3).dtTransOffset = 2;
 
@@ -670,7 +670,7 @@
             section.nData     = 1;
             section.data(1)  = dumData; %prealloc
 
-                    ;% run_q1_test_DW.FromWorkspace1_IWORK.PrevIndex
+                    ;% run_q1_test_DW.FromWorkspace2_IWORK.PrevIndex
                     section.data(1).logicalSrcIdx = 28;
                     section.data(1).dtTransOffset = 0;
 
@@ -719,8 +719,8 @@
     ;%
 
 
-    targMap.checksum0 = 2845543736;
-    targMap.checksum1 = 2653639686;
-    targMap.checksum2 = 2521677739;
-    targMap.checksum3 = 3111902566;
+    targMap.checksum0 = 913789187;
+    targMap.checksum1 = 1825507272;
+    targMap.checksum2 = 91693786;
+    targMap.checksum3 = 393460248;
 

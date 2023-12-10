@@ -7,9 +7,9 @@
  *
  * Code generation for model "run_q1_test".
  *
- * Model version              : 1.40
+ * Model version              : 1.42
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sat Dec  9 02:27:26 2023
+ * C source code generated on : Sun Dec 10 06:15:56 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -866,7 +866,7 @@ typedef struct {
   real_T mmcn;                         /* '<S2>/mm//cn' */
   real_T InverseModulus;               /* '<S2>/Inverse Modulus' */
   real_T mmcn2;                        /* '<S2>/mm//cn - 2' */
-  real_T FromWorkspace1;               /* '<Root>/From Workspace1' */
+  real_T FromWorkspace2;               /* '<Root>/From Workspace2' */
   real_T DiscreteTimeIntegrator;       /* '<Root>/Discrete-Time Integrator' */
   real_T Gain2;                        /* '<Root>/Gain2' */
   real_T TSamp;                        /* '<S1>/TSamp' */
@@ -899,7 +899,7 @@ typedef struct {
     void *TimePtr;
     void *DataPtr;
     void *RSimInfoPtr;
-  } FromWorkspace1_PWORK;              /* '<Root>/From Workspace1' */
+  } FromWorkspace2_PWORK;              /* '<Root>/From Workspace2' */
 
   void *HILWriteAnalog_PWORK;          /* '<S2>/HIL Write Analog' */
   struct {
@@ -925,7 +925,7 @@ typedef struct {
   int32_T HILReadEncoder2_Buffer;      /* '<S2>/HIL Read Encoder 2' */
   struct {
     int_T PrevIndex;
-  } FromWorkspace1_IWORK;              /* '<Root>/From Workspace1' */
+  } FromWorkspace2_IWORK;              /* '<Root>/From Workspace2' */
 
   boolean_T InverseModulus_FirstSample;/* '<S2>/Inverse Modulus' */
   boolean_T InverseModulus1_FirstSample;/* '<S2>/Inverse Modulus1' */
@@ -1039,10 +1039,10 @@ struct P_run_q1_test_T_ {
   real_T DiscreteTransferFcn_InitialStat;/* Expression: 0
                                           * Referenced by: '<Root>/Discrete Transfer Fcn'
                                           */
-  real_T Saturation_UpperSat;          /* Expression: 5
+  real_T Saturation_UpperSat;          /* Expression: 3.0
                                         * Referenced by: '<Root>/Saturation'
                                         */
-  real_T Saturation_LowerSat;          /* Expression: -5
+  real_T Saturation_LowerSat;          /* Expression: -3.0
                                         * Referenced by: '<Root>/Saturation'
                                         */
   real_T CableGain_Gain;               /* Expression: -1

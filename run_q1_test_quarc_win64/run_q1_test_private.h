@@ -7,9 +7,9 @@
  *
  * Code generation for model "run_q1_test".
  *
- * Model version              : 1.40
+ * Model version              : 1.42
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sat Dec  9 02:27:26 2023
+ * C source code generated on : Sun Dec 10 06:15:56 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -24,7 +24,7 @@
 #include "multiword_types.h"
 #include "zero_crossing_types.h"
 
-/* Used by FromWorkspace Block: '<Root>/From Workspace1' */
+/* Used by FromWorkspace Block: '<Root>/From Workspace2' */
 #ifndef rtInterpolate
 # define rtInterpolate(v1,v2,f1,f2)    (((v1)==(v2))?((double)(v1)): (((f1)*((double)(v1)))+((f2)*((double)(v2)))))
 #endif

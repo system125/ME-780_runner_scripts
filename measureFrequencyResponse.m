@@ -1,5 +1,5 @@
 load("pd_parameters.mat")
-model = "leadCompensatorSimulation";
+model = "bodeTestRunner";
 load("system_parameters.mat")
 
 enableSimModelFriction = true;
@@ -15,13 +15,13 @@ Ki = pd_param.Ki;
 
 %-- frequency to test
 %ws = logspace(-1,3,100);
-%ws = [0.1]
+ws = [5]
 
 fs = ws/(2*pi);
 N = 20;
-t_sim_end = 60;
+t_sim_end = 5;
 
-U_in = 5.0;
+U_in =.1;
 
 U_data = zeros(length(ws),3);
 %%

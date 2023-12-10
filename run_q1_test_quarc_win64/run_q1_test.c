@@ -7,9 +7,9 @@
  *
  * Code generation for model "run_q1_test".
  *
- * Model version              : 1.40
+ * Model version              : 1.42
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sat Dec  9 02:27:26 2023
+ * C source code generated on : Sun Dec 10 06:15:56 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -140,11 +140,11 @@ void run_q1_test_output(void)
     run_q1_test_DW.InverseModulus1_PreviousInput = run_q1_test_B.mmcn2;
   }
 
-  /* FromWorkspace: '<Root>/From Workspace1' */
+  /* FromWorkspace: '<Root>/From Workspace2' */
   {
-    real_T *pDataValues = (real_T *) run_q1_test_DW.FromWorkspace1_PWORK.DataPtr;
-    real_T *pTimeValues = (real_T *) run_q1_test_DW.FromWorkspace1_PWORK.TimePtr;
-    int_T currTimeIndex = run_q1_test_DW.FromWorkspace1_IWORK.PrevIndex;
+    real_T *pDataValues = (real_T *) run_q1_test_DW.FromWorkspace2_PWORK.DataPtr;
+    real_T *pTimeValues = (real_T *) run_q1_test_DW.FromWorkspace2_PWORK.TimePtr;
+    int_T currTimeIndex = run_q1_test_DW.FromWorkspace2_IWORK.PrevIndex;
     real_T t = run_q1_test_M->Timing.t[0];
 
     /* Get index */
@@ -164,7 +164,7 @@ void run_q1_test_output(void)
       }
     }
 
-    run_q1_test_DW.FromWorkspace1_IWORK.PrevIndex = currTimeIndex;
+    run_q1_test_DW.FromWorkspace2_IWORK.PrevIndex = currTimeIndex;
 
     /* Post output */
     {
@@ -172,9 +172,9 @@ void run_q1_test_output(void)
       real_T t2 = pTimeValues[currTimeIndex + 1];
       if (t1 == t2) {
         if (t < t1) {
-          run_q1_test_B.FromWorkspace1 = pDataValues[currTimeIndex];
+          run_q1_test_B.FromWorkspace2 = pDataValues[currTimeIndex];
         } else {
-          run_q1_test_B.FromWorkspace1 = pDataValues[currTimeIndex + 1];
+          run_q1_test_B.FromWorkspace2 = pDataValues[currTimeIndex + 1];
         }
       } else {
         real_T f1 = (t2 - t) / (t2 - t1);
@@ -184,14 +184,14 @@ void run_q1_test_output(void)
         int_T TimeIndex = currTimeIndex;
         d1 = pDataValues[TimeIndex];
         d2 = pDataValues[TimeIndex + 1];
-        run_q1_test_B.FromWorkspace1 = (real_T) rtInterpolate(d1, d2, f1, f2);
+        run_q1_test_B.FromWorkspace2 = (real_T) rtInterpolate(d1, d2, f1, f2);
         pDataValues += 1701;
       }
     }
   }
 
   /* Sum: '<Root>/Sum' */
-  rtb_Sum = run_q1_test_B.FromWorkspace1 - run_q1_test_B.InverseModulus;
+  rtb_Sum = run_q1_test_B.FromWorkspace2 - run_q1_test_B.InverseModulus;
 
   /* DiscreteIntegrator: '<Root>/Discrete-Time Integrator' */
   run_q1_test_B.DiscreteTimeIntegrator =
@@ -484,7 +484,7 @@ void run_q1_test_initialize(void)
     run_q1_test_DW.InverseModulus1_Revolutions = 0;
   }
 
-  /* Start for FromWorkspace: '<Root>/From Workspace1' */
+  /* Start for FromWorkspace: '<Root>/From Workspace2' */
   {
     static real_T pTimeValues0[] = { 0.0, 0.0010078957757599682,
       0.0020157915515199363, 0.0030236873272799052, 0.0040315831030398727,
@@ -1608,9 +1608,9 @@ void run_q1_test_initialize(void)
       1.4070961213974442E-6, 4.4641405594347816E-7, 8.8417607457813574E-8,
       5.5409188348676253E-9, 0.0 } ;
 
-    run_q1_test_DW.FromWorkspace1_PWORK.TimePtr = (void *) pTimeValues0;
-    run_q1_test_DW.FromWorkspace1_PWORK.DataPtr = (void *) pDataValues0;
-    run_q1_test_DW.FromWorkspace1_IWORK.PrevIndex = 0;
+    run_q1_test_DW.FromWorkspace2_PWORK.TimePtr = (void *) pTimeValues0;
+    run_q1_test_DW.FromWorkspace2_PWORK.DataPtr = (void *) pDataValues0;
+    run_q1_test_DW.FromWorkspace2_IWORK.PrevIndex = 0;
   }
 
   /* InitializeConditions for DiscreteIntegrator: '<Root>/Discrete-Time Integrator' */
@@ -1768,10 +1768,10 @@ RT_MODEL_run_q1_test_T *run_q1_test(void)
   run_q1_test_M->Timing.stepSize1 = 0.001;
 
   /* External mode info */
-  run_q1_test_M->Sizes.checksums[0] = (2845543736U);
-  run_q1_test_M->Sizes.checksums[1] = (2653639686U);
-  run_q1_test_M->Sizes.checksums[2] = (2521677739U);
-  run_q1_test_M->Sizes.checksums[3] = (3111902566U);
+  run_q1_test_M->Sizes.checksums[0] = (913789187U);
+  run_q1_test_M->Sizes.checksums[1] = (1825507272U);
+  run_q1_test_M->Sizes.checksums[2] = (91693786U);
+  run_q1_test_M->Sizes.checksums[3] = (393460248U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;

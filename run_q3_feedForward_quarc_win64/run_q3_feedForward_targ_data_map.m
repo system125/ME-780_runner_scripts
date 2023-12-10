@@ -459,8 +459,8 @@
         ;%
         ;% Auto data (run_q3_feedForward_B)
         ;%
-            section.nData     = 15;
-            section.data(15)  = dumData; %prealloc
+            section.nData     = 14;
+            section.data(14)  = dumData; %prealloc
 
                     ;% run_q3_feedForward_B.mmcn
                     section.data(1).logicalSrcIdx = 0;
@@ -506,21 +506,17 @@
                     section.data(11).logicalSrcIdx = 11;
                     section.data(11).dtTransOffset = 10;
 
-                    ;% run_q3_feedForward_B.Sum1
+                    ;% run_q3_feedForward_B.Sum3
                     section.data(12).logicalSrcIdx = 12;
                     section.data(12).dtTransOffset = 11;
 
-                    ;% run_q3_feedForward_B.Sum3
+                    ;% run_q3_feedForward_B.Saturation
                     section.data(13).logicalSrcIdx = 13;
                     section.data(13).dtTransOffset = 12;
 
-                    ;% run_q3_feedForward_B.Saturation
+                    ;% run_q3_feedForward_B.Gain1
                     section.data(14).logicalSrcIdx = 14;
                     section.data(14).dtTransOffset = 13;
-
-                    ;% run_q3_feedForward_B.Gain1
-                    section.data(15).logicalSrcIdx = 15;
-                    section.data(15).dtTransOffset = 14;
 
             nTotData = nTotData + section.nData;
             sigMap.sections(1) = section;
@@ -649,8 +645,8 @@
             dworkMap.sections(2) = section;
             clear section
 
-            section.nData     = 10;
-            section.data(10)  = dumData; %prealloc
+            section.nData     = 8;
+            section.data(8)  = dumData; %prealloc
 
                     ;% run_q3_feedForward_DW.HILReadEncoder1_PWORK
                     section.data(1).logicalSrcIdx = 17;
@@ -674,23 +670,15 @@
 
                     ;% run_q3_feedForward_DW.ToWorkspace_PWORK.LoggedData
                     section.data(6).logicalSrcIdx = 22;
-                    section.data(6).dtTransOffset = 6;
+                    section.data(6).dtTransOffset = 7;
 
                     ;% run_q3_feedForward_DW.ToWorkspace1_PWORK.LoggedData
                     section.data(7).logicalSrcIdx = 23;
-                    section.data(7).dtTransOffset = 7;
+                    section.data(7).dtTransOffset = 8;
 
                     ;% run_q3_feedForward_DW.ToWorkspace2_PWORK.LoggedData
                     section.data(8).logicalSrcIdx = 24;
-                    section.data(8).dtTransOffset = 8;
-
-                    ;% run_q3_feedForward_DW.ToWorkspace3_PWORK.LoggedData
-                    section.data(9).logicalSrcIdx = 25;
-                    section.data(9).dtTransOffset = 9;
-
-                    ;% run_q3_feedForward_DW.ToWorkspace4_PWORK.LoggedData
-                    section.data(10).logicalSrcIdx = 26;
-                    section.data(10).dtTransOffset = 10;
+                    section.data(8).dtTransOffset = 9;
 
             nTotData = nTotData + section.nData;
             dworkMap.sections(3) = section;
@@ -700,23 +688,23 @@
             section.data(5)  = dumData; %prealloc
 
                     ;% run_q3_feedForward_DW.HILInitialize_ClockModes
-                    section.data(1).logicalSrcIdx = 27;
+                    section.data(1).logicalSrcIdx = 25;
                     section.data(1).dtTransOffset = 0;
 
                     ;% run_q3_feedForward_DW.HILInitialize_QuadratureModes
-                    section.data(2).logicalSrcIdx = 28;
+                    section.data(2).logicalSrcIdx = 26;
                     section.data(2).dtTransOffset = 1;
 
                     ;% run_q3_feedForward_DW.HILInitialize_InitialEICounts
-                    section.data(3).logicalSrcIdx = 29;
+                    section.data(3).logicalSrcIdx = 27;
                     section.data(3).dtTransOffset = 3;
 
                     ;% run_q3_feedForward_DW.HILReadEncoder1_Buffer
-                    section.data(4).logicalSrcIdx = 30;
+                    section.data(4).logicalSrcIdx = 28;
                     section.data(4).dtTransOffset = 5;
 
                     ;% run_q3_feedForward_DW.HILReadEncoder2_Buffer
-                    section.data(5).logicalSrcIdx = 31;
+                    section.data(5).logicalSrcIdx = 29;
                     section.data(5).dtTransOffset = 6;
 
             nTotData = nTotData + section.nData;
@@ -727,7 +715,7 @@
             section.data(1)  = dumData; %prealloc
 
                     ;% run_q3_feedForward_DW.FromWorkspace1_IWORK.PrevIndex
-                    section.data(1).logicalSrcIdx = 32;
+                    section.data(1).logicalSrcIdx = 30;
                     section.data(1).dtTransOffset = 0;
 
             nTotData = nTotData + section.nData;
@@ -738,11 +726,11 @@
             section.data(2)  = dumData; %prealloc
 
                     ;% run_q3_feedForward_DW.InverseModulus_FirstSample
-                    section.data(1).logicalSrcIdx = 33;
+                    section.data(1).logicalSrcIdx = 31;
                     section.data(1).dtTransOffset = 0;
 
                     ;% run_q3_feedForward_DW.InverseModulus1_FirstSample
-                    section.data(2).logicalSrcIdx = 34;
+                    section.data(2).logicalSrcIdx = 32;
                     section.data(2).dtTransOffset = 1;
 
             nTotData = nTotData + section.nData;
@@ -775,8 +763,8 @@
     ;%
 
 
-    targMap.checksum0 = 3142181939;
-    targMap.checksum1 = 3565932462;
-    targMap.checksum2 = 161369892;
-    targMap.checksum3 = 1278413200;
+    targMap.checksum0 = 3783752551;
+    targMap.checksum1 = 1071097282;
+    targMap.checksum2 = 1738773245;
+    targMap.checksum3 = 1104643990;
 

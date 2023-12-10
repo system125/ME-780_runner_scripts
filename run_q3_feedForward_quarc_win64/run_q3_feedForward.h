@@ -9,7 +9,7 @@
  *
  * Model version              : 1.43
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sat Dec  9 06:11:31 2023
+ * C source code generated on : Sun Dec 10 05:30:27 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -874,7 +874,6 @@ typedef struct {
   real_T Gain2;                        /* '<Root>/Gain2' */
   real_T TSamp_m;                      /* '<S1>/TSamp' */
   real_T DiscreteTransferFcn;          /* '<Root>/Discrete Transfer Fcn' */
-  real_T Sum1;                         /* '<Root>/Sum1' */
   real_T Sum3;                         /* '<Root>/Sum3' */
   real_T Saturation;                   /* '<Root>/Saturation' */
   real_T Gain1;                        /* '<Root>/Gain1' */
@@ -909,7 +908,7 @@ typedef struct {
 
   void *HILWriteAnalog_PWORK;          /* '<S3>/HIL Write Analog' */
   struct {
-    void *LoggedData[2];
+    void *LoggedData[3];
   } Scope_PWORK;                       /* '<Root>/Scope' */
 
   struct {
@@ -923,14 +922,6 @@ typedef struct {
   struct {
     void *LoggedData;
   } ToWorkspace2_PWORK;                /* '<Root>/To Workspace2' */
-
-  struct {
-    void *LoggedData;
-  } ToWorkspace3_PWORK;                /* '<Root>/To Workspace3' */
-
-  struct {
-    void *LoggedData;
-  } ToWorkspace4_PWORK;                /* '<Root>/To Workspace4' */
 
   int32_T HILInitialize_ClockModes;    /* '<S3>/HIL Initialize' */
   int32_T HILInitialize_QuadratureModes[2];/* '<S3>/HIL Initialize' */
