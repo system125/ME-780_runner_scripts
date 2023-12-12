@@ -7,9 +7,9 @@
  *
  * Code generation for model "bodeTestRunner".
  *
- * Model version              : 1.49
+ * Model version              : 1.50
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Tue Dec 12 07:03:12 2023
+ * C source code generated on : Tue Dec 12 08:18:59 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -68,35 +68,31 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&bodeTestRunner_B.mmcn), 0, 0, 9 }
+  { (char_T *)(&bodeTestRunner_B.mmcn), 0, 0, 5 }
   ,
 
-  { (char_T *)(&bodeTestRunner_DW.UD_DSTATE), 0, 0, 19 },
+  { (char_T *)(&bodeTestRunner_DW.HILInitialize_AIMinimums[0]), 0, 0, 16 },
 
   { (char_T *)(&bodeTestRunner_DW.HILInitialize_Card), 15, 0, 1 },
 
-  { (char_T *)(&bodeTestRunner_DW.HILReadEncoder1_PWORK), 11, 0, 7 },
+  { (char_T *)(&bodeTestRunner_DW.HILReadEncoder1_PWORK), 11, 0, 6 },
 
   { (char_T *)(&bodeTestRunner_DW.HILInitialize_ClockModes), 6, 0, 7 },
-
-  { (char_T *)(&bodeTestRunner_DW.FromWorkspace2_IWORK.PrevIndex), 10, 0, 1 },
 
   { (char_T *)(&bodeTestRunner_DW.InverseModulus_FirstSample), 8, 0, 2 }
 };
 
 /* data type transition table for block I/O structure */
 static DataTypeTransitionTable rtBTransTable = {
-  7U,
+  6U,
   rtBTransitions
 };
 
 /* data type transitions for Parameters structure */
 static DataTypeTransition rtPTransitions[] = {
-  { (char_T *)(&bodeTestRunner_P.Kd), 0, 0, 3 },
-
   { (char_T *)(&bodeTestRunner_P.HILReadEncoder1_channels), 7, 0, 3 },
 
-  { (char_T *)(&bodeTestRunner_P.HILInitialize_OOTerminate), 0, 0, 28 },
+  { (char_T *)(&bodeTestRunner_P.HILInitialize_OOTerminate), 0, 0, 26 },
 
   { (char_T *)(&bodeTestRunner_P.HILInitialize_CKChannels), 6, 0, 4 },
 
@@ -107,7 +103,7 @@ static DataTypeTransition rtPTransitions[] = {
 
 /* data type transition table for Parameters structure */
 static DataTypeTransitionTable rtPTransTable = {
-  6U,
+  5U,
   rtPTransitions
 };
 

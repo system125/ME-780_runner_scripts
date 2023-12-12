@@ -9,7 +9,7 @@
  *
  * Model version              : 1.42
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 17:48:49 2023
+ * C source code generated on : Tue Dec 12 08:11:37 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -171,12 +171,12 @@ P_run_q1_test_T run_q1_test_P = {
   /* Expression: [(1-ad) 0]
    * Referenced by: '<Root>/Discrete Transfer Fcn'
    */
-  { 0.071769312819495723, 0.0 },
+  { 0.066418547116145255, 0.0 },
 
   /* Expression: [1 -ad]
    * Referenced by: '<Root>/Discrete Transfer Fcn'
    */
-  { 1.0, -0.92823068718050428 },
+  { 1.0, -0.93358145288385475 },
 
   /* Expression: 0
    * Referenced by: '<Root>/Discrete Transfer Fcn'

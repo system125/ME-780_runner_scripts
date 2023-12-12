@@ -7,9 +7,9 @@
  *
  * Code generation for model "run_q2_test".
  *
- * Model version              : 1.43
+ * Model version              : 1.44
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 17:47:56 2023
+ * C source code generated on : Tue Dec 12 08:01:40 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -25,19 +25,19 @@
 P_run_q2_test_T run_q2_test_P = {
   /* Variable: pid_param
    * Referenced by:
-   *   '<Root>/Gain'
-   *   '<Root>/Gain1'
-   *   '<Root>/Gain2'
+   *   '<Root>/Kd'
+   *   '<Root>/Ki'
+   *   '<Root>/Kp'
    */
   {
-    0.70590372219145414,
-    5.2214451208522679,
-    0.015653281683425585,
-    68.752171366320837,
-    0.10018928342466786,
-    5.2214451208522679,
-    0.014544995163452586,
-    0.049548882566602108
+    1.0237710876774628,
+    9.1511424549458251,
+    0.017800351801026289,
+    77.392396823862,
+    0.0848193365356563,
+    9.1511424549458251,
+    0.012921165916025424,
+    0.039975411582573346
   },
 
   /* Mask Parameter: DiscreteDerivative_ICPrevScaled
@@ -173,12 +173,12 @@ P_run_q2_test_T run_q2_test_P = {
   /* Expression: [(1-ad) 0]
    * Referenced by: '<Root>/Discrete Transfer Fcn'
    */
-  { 0.06644198618151953, 0.0 },
+  { 0.074473391358559682, 0.0 },
 
   /* Expression: [1 -ad]
    * Referenced by: '<Root>/Discrete Transfer Fcn'
    */
-  { 1.0, -0.93355801381848047 },
+  { 1.0, -0.92552660864144032 },
 
   /* Expression: 0
    * Referenced by: '<Root>/Discrete Transfer Fcn'

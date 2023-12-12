@@ -7,9 +7,9 @@
  *
  * Code generation for model "run_q2_test".
  *
- * Model version              : 1.43
+ * Model version              : 1.44
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 17:47:56 2023
+ * C source code generated on : Tue Dec 12 08:01:40 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -197,15 +197,15 @@ void run_q2_test_output(void)
   run_q2_test_B.DiscreteTimeIntegrator =
     run_q2_test_DW.DiscreteTimeIntegrator_DSTATE;
 
-  /* Gain: '<Root>/Gain2' */
-  run_q2_test_B.Gain2 = run_q2_test_P.pid_param.Kd * rtb_Sum;
+  /* Gain: '<Root>/Kd' */
+  run_q2_test_B.Kd = run_q2_test_P.pid_param.Kd * rtb_Sum;
 
   /* SampleTimeMath: '<S1>/TSamp'
    *
    * About '<S1>/TSamp':
    *  y = u * K where K = 1 / ( w * Ts )
    */
-  run_q2_test_B.TSamp = run_q2_test_B.Gain2 * run_q2_test_P.TSamp_WtEt;
+  run_q2_test_B.TSamp = run_q2_test_B.Kd * run_q2_test_P.TSamp_WtEt;
 
   /* DiscreteTransferFcn: '<Root>/Discrete Transfer Fcn' incorporates:
    *  Sum: '<S1>/Diff'
@@ -223,7 +223,7 @@ void run_q2_test_output(void)
     run_q2_test_DW.DiscreteTransferFcn_states;
 
   /* Sum: '<Root>/Sum1' incorporates:
-   *  Gain: '<Root>/Gain'
+   *  Gain: '<Root>/Kp'
    */
   run_q2_test_B.Sum1 = (run_q2_test_P.pid_param.Kp * rtb_Sum +
                         run_q2_test_B.DiscreteTimeIntegrator) +
@@ -265,8 +265,8 @@ void run_q2_test_output(void)
     }
   }
 
-  /* Gain: '<Root>/Gain1' */
-  run_q2_test_B.Gain1 = run_q2_test_P.pid_param.Ki * rtb_Sum;
+  /* Gain: '<Root>/Ki' */
+  run_q2_test_B.Ki = run_q2_test_P.pid_param.Ki * rtb_Sum;
 }
 
 /* Model update function */
@@ -274,7 +274,7 @@ void run_q2_test_update(void)
 {
   /* Update for DiscreteIntegrator: '<Root>/Discrete-Time Integrator' */
   run_q2_test_DW.DiscreteTimeIntegrator_DSTATE +=
-    run_q2_test_P.DiscreteTimeIntegrator_gainval * run_q2_test_B.Gain1;
+    run_q2_test_P.DiscreteTimeIntegrator_gainval * run_q2_test_B.Ki;
 
   /* Update for UnitDelay: '<S1>/UD' */
   run_q2_test_DW.UD_DSTATE = run_q2_test_B.TSamp;
@@ -1768,10 +1768,10 @@ RT_MODEL_run_q2_test_T *run_q2_test(void)
   run_q2_test_M->Timing.stepSize1 = 0.001;
 
   /* External mode info */
-  run_q2_test_M->Sizes.checksums[0] = (3407562707U);
-  run_q2_test_M->Sizes.checksums[1] = (822012422U);
-  run_q2_test_M->Sizes.checksums[2] = (136587301U);
-  run_q2_test_M->Sizes.checksums[3] = (3659610798U);
+  run_q2_test_M->Sizes.checksums[0] = (1057297960U);
+  run_q2_test_M->Sizes.checksums[1] = (1440676637U);
+  run_q2_test_M->Sizes.checksums[2] = (2236585629U);
+  run_q2_test_M->Sizes.checksums[3] = (1381286502U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;

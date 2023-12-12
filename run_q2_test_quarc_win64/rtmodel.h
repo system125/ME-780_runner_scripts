@@ -7,9 +7,9 @@
  *
  * Code generation for model "run_q2_test".
  *
- * Model version              : 1.43
+ * Model version              : 1.44
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 17:47:56 2023
+ * C source code generated on : Tue Dec 12 08:01:40 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

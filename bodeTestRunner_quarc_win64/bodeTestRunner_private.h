@@ -7,9 +7,9 @@
  *
  * Code generation for model "bodeTestRunner".
  *
- * Model version              : 1.49
+ * Model version              : 1.50
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Tue Dec 12 07:03:12 2023
+ * C source code generated on : Tue Dec 12 08:18:59 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -23,15 +23,6 @@
 #include "rtwtypes.h"
 #include "multiword_types.h"
 #include "zero_crossing_types.h"
-
-/* Used by FromWorkspace Block: '<Root>/From Workspace2' */
-#ifndef rtInterpolate
-# define rtInterpolate(v1,v2,f1,f2)    (((v1)==(v2))?((double)(v1)): (((f1)*((double)(v1)))+((f2)*((double)(v2)))))
-#endif
-
-#ifndef rtRound
-# define rtRound(v)                    ( ((v) >= 0) ? floor((v) + 0.5) : ceil((v) - 0.5) )
-#endif
 
 /* A global buffer for storing error messages (defined in quanser_common library) */
 EXTERN char _rt_error_message[512];
