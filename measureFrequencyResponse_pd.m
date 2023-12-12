@@ -13,6 +13,7 @@ ad = exp(-Ts*pd_param.a);
 Kp = pd_param.Kp;
 Kd = pd_param.Kd;
 Ki = pd_param.Ki;
+a = pd_param.a;
 
 %-- frequency to test
 ws = logspace(.7,2,20);
@@ -27,15 +28,24 @@ T_sample = Ts;
 U_data = zeros(length(ws),3);
 %%
 j = sqrt(-1);
-P_jw = @(w) Kp + Ki/(j*w)+ Kd*(pd_param.a*j*w)/(j*w+pd_param.a);
+% P_jw = @(w) Kp + Ki/(j*w)+ Kd*(pd_param.a*j*w)/(j*w+pd_param.a);
+
+s = tf('s');
+K_s = Kp + Kd*(pd_param.a*s)/(s + pd_param.a);
 
 A0 = 1.5;
 for i = 1:length(ws)
     w_i = ws(i);
     sprintf("Running simulation for frequency:%f",w_i)
-    U_in = A0/abs(P_jw(w_i));
-
+    % -- First account for gain of controller 
     ts = (t_sim_start:Ts:t_sim_end)';
+    x_p = sin(w_i*ts);
+    ys = lsim(K_s,x_p,ts);
+    t_mask = ts > 20;
+    sinDta = interpolateSineData(ts(t_mask),ys(t_mask),w_i);
+
+    U_in = A0/sinDta.U;
+
     xd = U_in*sin(w_i*ts);
     xd = timeseries(xd,ts);
     xd2 = 1.5*sin(w_i*ts);
@@ -47,7 +57,8 @@ for i = 1:length(ws)
     pause(t_sim_end+t_dwell);
     
     save(sprintf("./pd_freq_response/freq_response_%d.mat",i),"U_in","x_res","xd")
-    sineData = interpolateSineData(x_res.time,x_res.signals.values,ws(i));
+    t_mask = x_res.time > 20;
+    sineData = interpolateSineData(x_res.time(t_mask),x_res.signals.values(t_mask),ws(i));
 
     U_data(i,1) = ws(i); U_data(i,2) = 20*log10(sineData.U/U_in); U_data(i,3) = sineData.Phi;
 end

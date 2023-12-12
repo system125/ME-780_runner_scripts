@@ -7,9 +7,9 @@
  *
  * Code generation for model "bodeTestRunner".
  *
- * Model version              : 1.48
+ * Model version              : 1.49
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Tue Dec 12 04:12:08 2023
+ * C source code generated on : Tue Dec 12 07:03:12 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
