@@ -4,7 +4,7 @@ load("system_parameters.mat")
 
 enableSimModelFriction = true;
 t_sim_start = 0;
-t_dwell = 5;
+t_dwell = 15;
 Ts = 0.001;
 
 %-- Controller Parameters
@@ -15,7 +15,7 @@ Ki = pd_param.Ki;
 
 %-- frequency to test
 ws = logspace(0,2,20);
-
+%%ws = 2*pi*fs;
 
 fs = ws/(2*pi);
 N = 20;
@@ -23,34 +23,33 @@ t_sim_end = 60;
 
 T_sample = Ts;
 
+T_ends = 120;
 U_data = zeros(length(ws),3);
 %%
 j = sqrt(-1);
 P_jw = @(w) Kp + Ki/(j*w)+ Kd*(pd_param.a*j*w)/(j*w+pd_param.a);
+mkdir("./pd_freq_response")
 for i = 1:length(ws)
     w_i = ws(i);
     disp("Running simulation for frequency:")
-    U_in = 1.5/abs(P_jw(w_i));
-
-
-    
-
+    U_in = 2.0/abs(P_jw(w_i));
+    t_sim_end = T_ends;
 
     ts = (t_sim_start:Ts:t_sim_end)';
     xd = U_in*sin(w_i*ts);
     xd = timeseries(xd,ts);
-    xd2 = 1.5*sin(w_i*ts);
-    xd2 = timeseries(xd2,ts);
+
 
     set_param(model,"StartTime",string(t_sim_start));
     set_param(model,"StopTime",string(t_sim_end));
     set_param(model,"SimulationCommand","start");
     pause(t_sim_end+t_dwell);
     
-    save(sprintf("freq_response_i.mat"),"U_in","x_res","xd")
+    save(sprintf("./pd_freq_response/freq_response_%d.mat",i),"ts","x_res","x_sim_in")
     %sineData = interpolateSineData(x_res.time,x_res.signals.values,fs(i));
 
     %U_data(i,1) = ws(i); U_data(i,2) = 20*log10(sineData.U/U_in); U_data(i,3) = sineData.Phi;
+    %break;
 end
 %%
 

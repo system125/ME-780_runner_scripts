@@ -7,9 +7,9 @@
  *
  * Code generation for model "bodeTestRunner".
  *
- * Model version              : 1.46
+ * Model version              : 1.48
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 17:24:57 2023
+ * C source code generated on : Tue Dec 12 04:12:08 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -40,9 +40,8 @@
 
 /* Shared type includes */
 #include "multiword_types.h"
-#include "rtGetInf.h"
-#include "rt_nonfinite.h"
 #include "rt_defines.h"
+#include "rt_nonfinite.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetBlockIO
@@ -873,7 +872,6 @@ typedef struct {
   real_T DiscreteTransferFcn;          /* '<Root>/Discrete Transfer Fcn' */
   real_T disc;                         /* '<Root>/Sum1' */
   real_T in;                           /* '<Root>/Saturation' */
-  real_T Derivative;                   /* '<Root>/Derivative' */
 } B_bodeTestRunner_T;
 
 /* Block states (default storage) for system '<Root>' */
@@ -891,10 +889,6 @@ typedef struct {
   real_T InverseModulus1_PreviousInput;/* '<S2>/Inverse Modulus1' */
   real_T InverseModulus1_Revolutions;  /* '<S2>/Inverse Modulus1' */
   real_T DiscreteTransferFcn_tmp;      /* '<Root>/Discrete Transfer Fcn' */
-  real_T TimeStampA;                   /* '<Root>/Derivative' */
-  real_T LastUAtTimeA;                 /* '<Root>/Derivative' */
-  real_T TimeStampB;                   /* '<Root>/Derivative' */
-  real_T LastUAtTimeB;                 /* '<Root>/Derivative' */
   t_card HILInitialize_Card;           /* '<S2>/HIL Initialize' */
   void *HILReadEncoder1_PWORK;         /* '<S2>/HIL Read Encoder1' */
   void *HILReadEncoder2_PWORK;         /* '<S2>/HIL Read Encoder 2' */
@@ -940,11 +934,12 @@ typedef struct {
 
 /* Parameters (default storage) */
 struct P_bodeTestRunner_T_ {
-  struct_69xIBEWZoPNsgydcxPhrJC pd_param;/* Variable: pd_param
-                                          * Referenced by:
-                                          *   '<Root>/Gain2'
-                                          *   '<Root>/Gain3'
-                                          */
+  real_T Kd;                           /* Variable: Kd
+                                        * Referenced by: '<Root>/Gain3'
+                                        */
+  real_T Kp;                           /* Variable: Kp
+                                        * Referenced by: '<Root>/Gain2'
+                                        */
   real_T DiscreteDerivative_ICPrevScaled;
                               /* Mask Parameter: DiscreteDerivative_ICPrevScaled
                                * Referenced by: '<S1>/UD'

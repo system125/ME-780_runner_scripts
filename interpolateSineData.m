@@ -1,10 +1,10 @@
-function out = interpolateSineData(t,v,f)
+function out = interpolateSineData(t,v,omega)
     %% -- Takes in sine response and calculates the magnitude gain and frequency phase shift
     % Here t -> time series value, v -> Measured output variable f->
     % Frequency of the signal
     % -> U gain of the signal and phi -> phase that matches the signal
     % Returns : sturct{U,Phi,M}
-    omega = 2*pi*f;
+   % omega = 2*pi*f;
     sin_wt = sin(omega*t);
     cos_wt = cos(omega*t);
 

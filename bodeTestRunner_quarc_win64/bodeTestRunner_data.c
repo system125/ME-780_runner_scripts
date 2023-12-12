@@ -7,9 +7,9 @@
  *
  * Code generation for model "bodeTestRunner".
  *
- * Model version              : 1.46
+ * Model version              : 1.48
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 17:24:57 2023
+ * C source code generated on : Tue Dec 12 04:12:08 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -23,17 +23,15 @@
 
 /* Block parameters (default storage) */
 P_bodeTestRunner_T bodeTestRunner_P = {
-  /* Variable: pd_param
-   * Referenced by:
-   *   '<Root>/Gain2'
-   *   '<Root>/Gain3'
+  /* Variable: Kd
+   * Referenced by: '<Root>/Gain3'
    */
-  {
-    1.186190567380528,
-    0.019409245541053173,
-    0.0,
-    74.47499176432936
-  },
+  0.04611,
+
+  /* Variable: Kp
+   * Referenced by: '<Root>/Gain2'
+   */
+  2.1998,
 
   /* Mask Parameter: DiscreteDerivative_ICPrevScaled
    * Referenced by: '<S1>/UD'
