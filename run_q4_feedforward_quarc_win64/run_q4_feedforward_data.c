@@ -9,7 +9,7 @@
  *
  * Model version              : 1.46
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 17:57:25 2023
+ * C source code generated on : Tue Dec 12 08:03:19 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -46,7 +46,7 @@ P_run_q4_feedforward_T run_q4_feedforward_P = {
   /* Variable: k_vel
    * Referenced by: '<Root>/Gain4'
    */
-  0.0078,
+  0.010585,
 
   /* Mask Parameter: DiscreteDerivative_ICPrevScaled
    * Referenced by: '<S5>/UD'
@@ -201,12 +201,12 @@ P_run_q4_feedforward_T run_q4_feedforward_P = {
   /* Expression: [(1-ad) 0]
    * Referenced by: '<Root>/Discrete Transfer Fcn'
    */
-  { 0.06644198618151953, 0.0 },
+  { 0.074473391358559682, 0.0 },
 
   /* Expression: [1 -ad]
    * Referenced by: '<Root>/Discrete Transfer Fcn'
    */
-  { 1.0, -0.93355801381848047 },
+  { 1.0, -0.92552660864144032 },
 
   /* Expression: 0
    * Referenced by: '<Root>/Discrete Transfer Fcn'

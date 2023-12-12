@@ -7,9 +7,9 @@
  *
  * Code generation for model "run_q2_test".
  *
- * Model version              : 1.43
+ * Model version              : 1.44
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Sun Dec 10 17:47:56 2023
+ * C source code generated on : Tue Dec 12 08:01:40 2023
  *
  * Target selection: quarc_win64.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -868,12 +868,12 @@ typedef struct {
   real_T mmcn2;                        /* '<S2>/mm//cn - 2' */
   real_T FromWorkspace2;               /* '<Root>/From Workspace2' */
   real_T DiscreteTimeIntegrator;       /* '<Root>/Discrete-Time Integrator' */
-  real_T Gain2;                        /* '<Root>/Gain2' */
+  real_T Kd;                           /* '<Root>/Kd' */
   real_T TSamp;                        /* '<S1>/TSamp' */
   real_T DiscreteTransferFcn;          /* '<Root>/Discrete Transfer Fcn' */
   real_T Sum1;                         /* '<Root>/Sum1' */
   real_T Saturation;                   /* '<Root>/Saturation' */
-  real_T Gain1;                        /* '<Root>/Gain1' */
+  real_T Ki;                           /* '<Root>/Ki' */
 } B_run_q2_test_T;
 
 /* Block states (default storage) for system '<Root>' */
@@ -943,9 +943,9 @@ typedef struct {
 struct P_run_q2_test_T_ {
   struct_wMsc3CgFqIXYmuQYnOzvCC pid_param;/* Variable: pid_param
                                            * Referenced by:
-                                           *   '<Root>/Gain'
-                                           *   '<Root>/Gain1'
-                                           *   '<Root>/Gain2'
+                                           *   '<Root>/Kd'
+                                           *   '<Root>/Ki'
+                                           *   '<Root>/Kp'
                                            */
   real_T DiscreteDerivative_ICPrevScaled;
                               /* Mask Parameter: DiscreteDerivative_ICPrevScaled

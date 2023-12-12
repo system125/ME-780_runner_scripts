@@ -457,7 +457,7 @@
                     section.data(5).logicalSrcIdx = 4;
                     section.data(5).dtTransOffset = 4;
 
-                    ;% run_q2_test_B.Gain2
+                    ;% run_q2_test_B.Kd
                     section.data(6).logicalSrcIdx = 5;
                     section.data(6).dtTransOffset = 5;
 
@@ -477,7 +477,7 @@
                     section.data(10).logicalSrcIdx = 10;
                     section.data(10).dtTransOffset = 9;
 
-                    ;% run_q2_test_B.Gain1
+                    ;% run_q2_test_B.Ki
                     section.data(11).logicalSrcIdx = 11;
                     section.data(11).dtTransOffset = 10;
 
@@ -718,8 +718,8 @@
     ;%
 
 
-    targMap.checksum0 = 3407562707;
-    targMap.checksum1 = 822012422;
-    targMap.checksum2 = 136587301;
-    targMap.checksum3 = 3659610798;
+    targMap.checksum0 = 1057297960;
+    targMap.checksum1 = 1440676637;
+    targMap.checksum2 = 2236585629;
+    targMap.checksum3 = 1381286502;
 
